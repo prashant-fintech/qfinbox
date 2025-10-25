@@ -1,0 +1,13 @@
+# Additional requirements for documentation building
+# These are extra dependencies not covered by the main project dependencies
+
+# Documentation theme and extensions
+sphinx-copybutton>=0.5.0
+myst-parser>=0.18.0
+sphinx-design>=0.3.0
+
+# For better code highlighting
+pygments>=2.12.0
+
+# For notebook execution (if needed)
+ipykernel>=6.15.0
