@@ -24,7 +24,7 @@ The qfinbox library is organized into several key modules:
 
 * **qfinbox.risk**: Risk management and measurement tools
 * **qfinbox.portfolio**: Portfolio optimization and analysis
-* **qfinbox.models**: Financial modeling frameworks  
+* **qfinbox.models**: Financial modeling frameworks
 * **qfinbox.simulation**: Market and scenario simulation
 * **qfinbox.data**: Data loading and processing utilities
 * **qfinbox.analysis**: Analysis and reporting tools

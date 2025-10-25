@@ -27,7 +27,7 @@ Added
 - Example placeholders for core functionality:
 
   - Portfolio optimization examples
-  - Risk management demonstrations  
+  - Risk management demonstrations
   - Monte Carlo simulation templates
   - Backtesting framework outline
 

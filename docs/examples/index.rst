@@ -46,5 +46,5 @@ These notebooks demonstrate real-world applications and provide step-by-step
 guidance for common quantitative finance tasks.
 
 .. note::
-   All examples use synthetic or publicly available data. 
+   All examples use synthetic or publicly available data.
    Adapt the code to work with your own datasets and requirements.
