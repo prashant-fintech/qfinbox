@@ -1,10 +1,7 @@
-qfinbox
-=======
+Module Reference
+================
 
-.. toctree::
-   :maxdepth: 4
-
-   qfinbox
+This section provides comprehensive documentation for all qfinbox modules and submodules.
 
 Main Package
 ------------

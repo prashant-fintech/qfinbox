@@ -43,8 +43,6 @@ Basic TVM Calculations
 
    qfinbox.tvm.basic.present_value
    qfinbox.tvm.basic.future_value
-   qfinbox.tvm.basic.interest_rate
-   qfinbox.tvm.basic.number_of_periods
    qfinbox.tvm.basic.effective_rate
    qfinbox.tvm.basic.nominal_rate
 
@@ -55,13 +53,12 @@ Annuities
    :toctree: generated/
    :nosignatures:
 
-   qfinbox.tvm.annuities.pv_ordinary_annuity
-   qfinbox.tvm.annuities.fv_ordinary_annuity
-   qfinbox.tvm.annuities.pv_annuity_due
-   qfinbox.tvm.annuities.fv_annuity_due
-   qfinbox.tvm.annuities.perpetuity_value
-   qfinbox.tvm.annuities.growing_annuity_pv
-   qfinbox.tvm.annuities.growing_perpetuity_value
+   qfinbox.tvm.annuities.ordinary_annuity_pv
+   qfinbox.tvm.annuities.ordinary_annuity_fv
+   qfinbox.tvm.annuities.annuity_due_pv
+   qfinbox.tvm.annuities.annuity_due_fv
+   qfinbox.tvm.annuities.annuity_pv
+   qfinbox.tvm.annuities.annuity_fv
 
 Bond Valuation
 ~~~~~~~~~~~~~~
@@ -71,11 +68,10 @@ Bond Valuation
    :nosignatures:
 
    qfinbox.tvm.bonds.bond_price
-   qfinbox.tvm.bonds.bond_yield
+   qfinbox.tvm.bonds.bond_yield_to_maturity
    qfinbox.tvm.bonds.bond_duration
+   qfinbox.tvm.bonds.bond_modified_duration
    qfinbox.tvm.bonds.bond_convexity
-   qfinbox.tvm.bonds.zero_coupon_bond_price
-   qfinbox.tvm.bonds.zero_coupon_bond_yield
 
 Loan Analysis
 ~~~~~~~~~~~~~
@@ -88,7 +84,6 @@ Loan Analysis
    qfinbox.tvm.loans.loan_balance
    qfinbox.tvm.loans.amortization_schedule
    qfinbox.tvm.loans.total_interest_paid
-   qfinbox.tvm.loans.loan_affordability
 
 Cash Flow Analysis
 ~~~~~~~~~~~~~~~~~~
@@ -97,9 +92,8 @@ Cash Flow Analysis
    :toctree: generated/
    :nosignatures:
 
-   qfinbox.tvm.cashflow.npv
-   qfinbox.tvm.cashflow.irr
-   qfinbox.tvm.cashflow.mirr
+   qfinbox.tvm.cashflow.net_present_value
+   qfinbox.tvm.cashflow.internal_rate_of_return
    qfinbox.tvm.cashflow.payback_period
    qfinbox.tvm.cashflow.discounted_payback_period
    qfinbox.tvm.cashflow.profitability_index
