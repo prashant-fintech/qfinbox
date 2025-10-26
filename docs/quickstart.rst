@@ -16,11 +16,11 @@ Here's a simple example to get started with qfinbox:
 
     # Example: Basic portfolio analysis
     # (This is a placeholder - actual implementation will vary)
-    
+
     # Create sample data
     dates = pd.date_range('2020-01-01', periods=252, freq='D')
     returns = np.random.normal(0.001, 0.02, 252)
-    
+
     # Basic risk metrics (placeholder)
     print("Sample portfolio analysis with qfinbox")
 

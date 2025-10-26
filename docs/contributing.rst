@@ -7,7 +7,7 @@ Getting Started
 ---------------
 
 1. **Fork the Repository**
-   
+
    Fork the qfinbox repository on GitHub and clone your fork locally:
 
    .. code-block:: bash
@@ -38,7 +38,7 @@ Code Style
 We use several tools to maintain code quality:
 
 * **Black** for code formatting
-* **isort** for import sorting  
+* **isort** for import sorting
 * **flake8** for linting
 * **mypy** for type checking
 
@@ -49,10 +49,10 @@ Run these tools before submitting:
     # Format code
     black src/ tests/
     isort src/ tests/
-    
+
     # Check linting
     flake8 src/ tests/
-    
+
     # Type checking
     mypy src/
 
@@ -72,7 +72,7 @@ Write tests for all new functionality:
 
     # Run tests
     pytest tests/
-    
+
     # With coverage
     pytest tests/ --cov=qfinbox --cov-report=html
 
@@ -156,18 +156,18 @@ Code Review Process
 -------------------
 
 1. **Submit Pull Request**
-   
+
    Create a pull request with:
-   
+
    * Clear title and description
    * Link to related issues
    * Summary of changes made
    * Testing performed
 
 2. **Code Review**
-   
+
    Maintainers will review for:
-   
+
    * Code quality and style
    * Test coverage
    * Documentation completeness
@@ -175,9 +175,9 @@ Code Review Process
    * API design consistency
 
 3. **Continuous Integration**
-   
+
    All PRs must pass:
-   
+
    * Unit tests
    * Code quality checks
    * Documentation builds
@@ -195,31 +195,31 @@ Use NumPy-style docstrings:
 
     def calculate_var(returns: np.ndarray, confidence: float = 0.95) -> float:
         """Calculate Value at Risk using historical method.
-        
+
         Parameters
         ----------
         returns : np.ndarray
             Array of historical returns
         confidence : float, default 0.95
             Confidence level for VaR calculation
-            
+
         Returns
         -------
         float
             Value at Risk at specified confidence level
-            
+
         Examples
         --------
         >>> returns = np.random.normal(0, 0.01, 1000)
         >>> var_95 = calculate_var(returns, 0.95)
         >>> print(f"95% VaR: {var_95:.4f}")
         95% VaR: -0.0163
-        
+
         Notes
         -----
         This implementation uses the historical simulation method,
         which makes no assumptions about return distribution.
-        
+
         References
         ----------
         .. [1] Jorion, P. (2007). Value at Risk: The New Benchmark
@@ -250,7 +250,7 @@ Community Guidelines
 --------------------
 
 * Be respectful and inclusive
-* Help newcomers get started  
+* Help newcomers get started
 * Share knowledge and expertise
 * Provide constructive feedback
 * Follow the code of conduct
@@ -271,7 +271,7 @@ Recognition
 Contributors are recognized through:
 
 * GitHub contributor list
-* Release notes acknowledgments  
+* Release notes acknowledgments
 * Documentation credits
 * Conference presentations (with permission)
 

@@ -1,0 +1,51 @@
+# Development Dockerfile with all dependencies including dev tools
+FROM python:3.11-slim
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
+
+# Set work directory
+WORKDIR /app
+
+# Install system dependencies required for scientific computing and development
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    gfortran \
+    libopenblas-dev \
+    liblapack-dev \
+    pkg-config \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create non-root user for security
+RUN useradd --create-home --shell /bin/bash qfinbox
+
+# Copy requirements first for better Docker layer caching
+COPY requirements.txt .
+
+# Upgrade pip and install all dependencies (including dev dependencies)
+RUN pip install --upgrade pip setuptools wheel && \
+    pip install -r requirements.txt
+
+# Copy project files
+COPY . .
+
+# Install the package in development mode
+RUN pip install -e .
+
+# Change ownership to non-root user
+RUN chown -R qfinbox:qfinbox /app
+
+# Switch to non-root user
+USER qfinbox
+
+# Expose ports for Jupyter notebooks and other services
+EXPOSE 8888 8000 5000
+
+# Default command for development
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
