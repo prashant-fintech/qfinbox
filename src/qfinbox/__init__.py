@@ -7,7 +7,24 @@ and investment strategy optimization, enhancing financial analysis
 and decision-making.
 """
 
-__version__ = "0.1.0"
+from . import tvm
+from ._version import __version__
+from .core import (
+    CalculationError,
+    DataError,
+    QFinBoxError,
+    ValidationError,
+    calculate_annualized_return,
+    calculate_annualized_volatility,
+    ensure_1d,
+    ensure_2d,
+    to_numpy,
+    validate_positive,
+    validate_returns,
+    validate_weights,
+)
+
+
 __author__ = "prashant-fintech"
 __email__ = "box_prashant@outlook.com"
 
@@ -22,9 +39,22 @@ __email__ = "box_prashant@outlook.com"
 # from . import utils
 
 __all__ = [
-    "__version__",
+    "CalculationError",
+    "DataError",
+    "QFinBoxError",
+    "ValidationError",
     "__author__",
     "__email__",
+    "__version__",
+    "calculate_annualized_return",
+    "calculate_annualized_volatility",
+    "ensure_1d",
+    "ensure_2d",
+    "to_numpy",
+    "tvm",
+    "validate_positive",
+    "validate_returns",
+    "validate_weights",
     # Add module names as they are implemented
     # "risk",
     # "portfolio",
