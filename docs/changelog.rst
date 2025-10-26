@@ -11,41 +11,70 @@ and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0
 
 Added
 ~~~~~
-- Initial project setup and documentation structure
-- Basic project configuration with pyproject.toml
-- Read the Docs configuration
-- Example documentation for key features
+- Enhanced documentation with comprehensive examples and tutorials
+- Advanced TVM usage patterns and real-world scenarios
+- Performance optimization tips and best practices
 
-[0.1.0] - 2025-10-25
+[0.1.0] - 2025-10-26
 ---------------------
 
 Added
 ~~~~~
-- Initial release of qfinbox
-- Project structure and build configuration
-- Documentation framework with Sphinx
-- Example placeholders for core functionality:
 
-  - Portfolio optimization examples
-  - Risk management demonstrations
-  - Monte Carlo simulation templates
-  - Backtesting framework outline
+**Complete Time Value of Money (TVM) Implementation** - The flagship feature of qfinbox v0.1.0
 
-- Development environment setup:
+- **Core TVM Module** with 28+ financial functions across 5 specialized modules:
 
-  - Black code formatting
-  - isort import sorting
-  - flake8 linting
-  - mypy type checking
-  - pytest testing framework
+  - ``qfinbox.tvm.basic``: Present/future value, interest rates, compounding (6 functions)
+  - ``qfinbox.tvm.annuities``: Ordinary/due annuities, perpetuities, growing annuities (7 functions)
+  - ``qfinbox.tvm.bonds``: Bond pricing, yield, duration, convexity analysis (6 functions)
+  - ``qfinbox.tvm.loans``: Payment calculations, amortization schedules, loan analysis (5 functions)
+  - ``qfinbox.tvm.cashflow``: NPV, IRR, payback period, profitability analysis (6 functions)
 
-- Documentation features:
+- **Robust Core Infrastructure**:
 
-  - API reference structure
-  - Comprehensive examples
-  - Installation guide
-  - Quick start tutorial
-  - Contributing guidelines
+  - ``qfinbox.core.validators``: Comprehensive input validation and type checking
+  - ``qfinbox.core.exceptions``: Custom financial calculation exceptions
+  - ``qfinbox.core.utils``: Mathematical utilities and helper functions
+
+- **Professional Package Features**:
+
+  - Modern Python packaging with ``pyproject.toml``
+  - Full type hints and runtime type checking
+  - Comprehensive error handling and input validation
+  - NumPy and SciPy integration for performance
+  - Extensive docstrings with usage examples
+
+- **Complete Documentation Suite**:
+
+  - Comprehensive API reference with auto-generated docs
+  - Step-by-step tutorial covering all TVM concepts
+  - Real-world examples and practical scenarios
+  - Installation and quick start guides
+  - Mathematical foundations and formula references
+
+- **Development Infrastructure**:
+
+  - Modern Python packaging and distribution
+  - Black code formatting and isort import sorting
+  - Type checking with mypy and comprehensive validation
+  - Test suite with pytest framework
+  - Continuous integration ready
+
+- **PyPI Distribution**:
+
+  - Published to Python Package Index (PyPI)
+  - Easy installation with ``pip install qfinbox``
+  - Professional distribution with proper metadata
+  - Comprehensive README with badges and examples
+
+**Key TVM Functions Include**:
+
+- **Basic calculations**: ``present_value()``, ``future_value()``, ``interest_rate()``, ``number_of_periods()``
+- **Annuity calculations**: ``pv_ordinary_annuity()``, ``fv_annuity_due()``, ``perpetuity_value()``
+- **Bond analysis**: ``bond_price()``, ``bond_yield()``, ``bond_duration()``, ``bond_convexity()``
+- **Loan analysis**: ``loan_payment()``, ``amortization_schedule()``, ``loan_balance()``
+- **Investment analysis**: ``npv()``, ``irr()``, ``mirr()``, ``payback_period()``, ``profitability_index()``
 
 Changed
 ~~~~~~~

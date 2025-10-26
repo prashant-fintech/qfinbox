@@ -1,0 +1,17 @@
+include README.md
+include LICENSE
+include CHANGELOG.md
+recursive-include src/qfinbox *.py
+recursive-include docs *.rst *.md *.py
+recursive-include tests *.py
+include pyproject.toml
+include requirements*.txt
+exclude .gitignore
+exclude .pre-commit-config.yaml
+exclude docker-compose.yml
+exclude Dockerfile*
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store
+global-exclude *.so
+global-exclude .git*

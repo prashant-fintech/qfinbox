@@ -1,8 +1,9 @@
 Welcome to qfinbox documentation!
 ====================================
 
-**qfinbox** is a Python library for quantitative finance that is currently in early development.
-The library aims to provide tools for risk management, portfolio optimization, and financial modeling.
+**qfinbox** is a comprehensive Python library for quantitative finance, providing robust tools for
+financial calculations, risk management, and investment analysis. The library is designed for
+finance professionals, researchers, and developers who need reliable quantitative finance tools.
 
 .. toctree::
    :maxdepth: 2
@@ -10,28 +11,47 @@ The library aims to provide tools for risk management, portfolio optimization, a
 
    installation
    quickstart
+   tutorial
    api/index
    examples/index
    contributing
    changelog
 
-Current Status
+Key Features
+------------
+
+qfinbox provides a comprehensive suite of financial calculation tools:
+
+* **Time Value of Money (TVM)**: Complete implementation with 28+ functions
+
+  * **Basic Calculations**: Present value, future value, interest rates, and time periods
+  * **Annuities**: Ordinary and due annuities, perpetuities, growing annuities
+  * **Bond Valuation**: Pricing, yield calculations, duration, and convexity
+  * **Loan Analysis**: Payment calculations, amortization schedules, refinancing analysis
+  * **Cash Flow Analysis**: NPV, IRR, modified IRR, payback period, profitability index
+
+* **Core Utilities**: Robust validation, error handling, and mathematical utilities
+* **Professional API**: Clean, well-documented interface with comprehensive type hints
+* **High Performance**: Optimized calculations using NumPy and SciPy
+
+Current Implementation Status
+-----------------------------
+
+✅ **Complete TVM Module** (v0.1.0)
+
+* 28+ financial functions across 5 specialized modules
+* Comprehensive input validation and error handling
+* Full test coverage and documentation
+* **Available on PyPI**: ``pip install qfinbox``
+
+Future Roadmap
 --------------
 
-qfinbox is in the initial development phase. The library currently provides:
-
-* **Basic Package Structure**: Core package with version and metadata
-* **Development Environment**: Complete setup for contributors
-* **Documentation Framework**: Ready for expansion as features are added
-
-Planned Features
-----------------
-
-* **Risk Management**: Risk assessment and measurement tools
-* **Portfolio Optimization**: Modern portfolio theory implementation
-* **Financial Modeling**: Quantitative modeling framework
-* **Market Simulation**: Monte Carlo and scenario analysis
-* **Data Integration**: Market data loading and processing
+* **Risk Management**: VaR, CVaR, stress testing, and scenario analysis
+* **Portfolio Optimization**: Modern portfolio theory, efficient frontier, asset allocation
+* **Options Pricing**: Black-Scholes, binomial trees, Monte Carlo methods
+* **Fixed Income**: Yield curve modeling, duration matching, immunization strategies
+* **Market Data Integration**: Real-time data feeds and historical analysis
 
 Quick Installation
 ------------------

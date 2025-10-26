@@ -4,22 +4,35 @@ Installation
 Requirements
 ------------
 
-qfinbox requires Python 3.8 or higher. The current minimal version has basic dependencies:
+qfinbox requires Python 3.8 or higher and has the following dependencies:
 
-* numpy >= 1.21.0
-* pandas >= 1.5.0
+**Core Dependencies:**
+* numpy >= 1.21.0 - Numerical computing and array operations
+* pandas >= 1.5.0 - Data manipulation and analysis
+* scipy >= 1.9.0 - Scientific computing and optimization
+
+**Optional Dependencies:**
+* matplotlib >= 3.5.0 - Plotting and visualization (for charts)
+* jupyter >= 1.0.0 - Notebook support (for interactive examples)
 
 Install from PyPI
 -----------------
 
-.. note::
-   qfinbox is currently in development and may not be available on PyPI yet.
-
-Once published, you can install qfinbox using pip:
+qfinbox is available on PyPI and can be installed using pip:
 
 .. code-block:: bash
 
     pip install qfinbox
+
+**Latest Version:** 0.1.0 (Released: October 26, 2025)
+
+**What's Included:**
+* Complete Time Value of Money (TVM) module with 28+ functions
+* Basic TVM calculations (present/future value, rates, periods)
+* Annuity calculations (ordinary, due, perpetuities, growing)
+* Bond valuation (pricing, yield, duration, convexity)
+* Loan analysis (payments, balances, amortization schedules)
+* Cash flow analysis (NPV, IRR, payback period, profitability index)
 
 Install Development Version
 ---------------------------
