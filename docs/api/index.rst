@@ -13,7 +13,7 @@ Core Modules
 
 .. autosummary::
    :toctree: generated/
-   :template: module.rst
+   :nosignatures:
 
    qfinbox
 

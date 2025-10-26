@@ -8,7 +8,6 @@ This section contains practical examples demonstrating how to use qfinbox for va
 
    portfolio_optimization
    risk_management
-   backtesting
    monte_carlo
 
 Example Categories
@@ -28,7 +27,7 @@ Risk Analysis
 
 Strategy Testing
 ~~~~~~~~~~~~~~~~
-* :doc:`backtesting` - Strategy backtesting framework
+* Strategy backtesting framework (coming soon)
 * Performance evaluation
 * Risk-adjusted returns
 

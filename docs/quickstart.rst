@@ -1,5 +1,5 @@
 Quick Start Guide
-================
+==================
 
 This guide will get you up and running with qfinbox in just a few minutes.
 

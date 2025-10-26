@@ -1,5 +1,5 @@
 Portfolio Optimization
-=====================
+======================
 
 This example demonstrates how to use qfinbox for portfolio optimization using modern portfolio theory.
 
