@@ -203,5 +203,9 @@ plots/
 figures/
 !output/.gitkeep
 
+# Documentation build directories
+docs/_build/
+docs/api/generated/
+
 *.md
 !README.md
