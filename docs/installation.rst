@@ -4,19 +4,18 @@ Installation
 Requirements
 ------------
 
-qfinbox requires Python 3.8 or higher and depends on several scientific computing libraries:
+qfinbox requires Python 3.8 or higher. The current minimal version has basic dependencies:
 
 * numpy >= 1.21.0
-* pandas >= 1.3.0
-* scipy >= 1.7.0
-* matplotlib >= 3.4.0
-* seaborn >= 0.11.0
-* yfinance >= 0.1.70
+* pandas >= 1.5.0
 
 Install from PyPI
 -----------------
 
-The easiest way to install qfinbox is using pip:
+.. note::
+   qfinbox is currently in development and may not be available on PyPI yet.
+
+Once published, you can install qfinbox using pip:
 
 .. code-block:: bash
 
@@ -35,18 +34,6 @@ To install the latest development version from GitHub:
 
 Optional Dependencies
 ---------------------
-
-For development work, install with development dependencies:
-
-.. code-block:: bash
-
-    pip install -e .[dev]
-
-For advanced features (machine learning, advanced optimization):
-
-.. code-block:: bash
-
-    pip install -e .[advanced]
 
 For documentation building:
 

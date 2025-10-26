@@ -1,9 +1,8 @@
 Welcome to qfinbox documentation!
 ====================================
 
-**qfinbox** is a Python library for quantitative finance, offering tools for risk management,
-portfolio optimization, and financial modeling. It enables easy simulation of market scenarios
-and investment strategy optimization, enhancing financial analysis and decision-making.
+**qfinbox** is a Python library for quantitative finance that is currently in early development.
+The library aims to provide tools for risk management, portfolio optimization, and financial modeling.
 
 .. toctree::
    :maxdepth: 2
@@ -16,14 +15,23 @@ and investment strategy optimization, enhancing financial analysis and decision-
    contributing
    changelog
 
-Key Features
-------------
+Current Status
+--------------
 
-* **Risk Management**: Comprehensive risk assessment tools
-* **Portfolio Optimization**: Advanced optimization algorithms
-* **Financial Modeling**: Flexible modeling framework
-* **Market Simulation**: Scenario analysis capabilities
-* **Investment Strategies**: Strategy backtesting and optimization
+qfinbox is in the initial development phase. The library currently provides:
+
+* **Basic Package Structure**: Core package with version and metadata
+* **Development Environment**: Complete setup for contributors
+* **Documentation Framework**: Ready for expansion as features are added
+
+Planned Features
+----------------
+
+* **Risk Management**: Risk assessment and measurement tools
+* **Portfolio Optimization**: Modern portfolio theory implementation
+* **Financial Modeling**: Quantitative modeling framework
+* **Market Simulation**: Monte Carlo and scenario analysis
+* **Data Integration**: Market data loading and processing
 
 Quick Installation
 ------------------

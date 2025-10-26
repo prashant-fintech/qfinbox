@@ -20,17 +20,9 @@ Core Modules
 Module Overview
 ---------------
 
-The qfinbox library is organized into several key modules:
-
-* **qfinbox.risk**: Risk management and measurement tools
-* **qfinbox.portfolio**: Portfolio optimization and analysis
-* **qfinbox.models**: Financial modeling frameworks
-* **qfinbox.simulation**: Market and scenario simulation
-* **qfinbox.data**: Data loading and processing utilities
-* **qfinbox.analysis**: Analysis and reporting tools
-* **qfinbox.backtest**: Strategy backtesting framework
-* **qfinbox.utils**: Common utilities and helpers
+The qfinbox library currently provides basic package metadata and version information.
+Additional modules will be documented here as they are implemented.
 
 .. note::
    This API documentation is automatically generated from the source code.
-   For examples and tutorials, see the :doc:`../examples/index` section.
+   Documentation will expand as new features are added to the library.
