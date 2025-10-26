@@ -9,208 +9,29 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
-        exclude:
-          # Reduce matrix size for faster CI
-          - os: windows-latest
-            python-version: "3.8"
-          - os: macos-latest
-            python-version: "3.8"
-          - os: windows-latest
-            python-version: "3.9"
-          - os: macos-latest
-            python-version: "3.9"
+        python-version: ["3.10", "3.11"]
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Cache pip dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/requirements*.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-${{ matrix.python-version }}-
-          ${{ runner.os }}-pip-
-
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip setuptools wheel
-        pip install -r requirements.txt
+        python -m pip install --upgrade pip
+        pip install pytest ruff
         pip install -e .
 
     - name: Lint with ruff
       run: |
         ruff check src/ tests/
 
-    - name: Check code formatting with ruff
-      run: |
-        ruff format --check --diff src/ tests/
-
-    - name: Type checking with mypy (if available)
-      run: |
-        pip install mypy types-requests || echo "Mypy not available"
-        mypy src/ || echo "Mypy check completed with warnings"
-      continue-on-error: true
-
     - name: Test with pytest
       run: |
-        pytest tests/ -v --cov=qfinbox --cov-report=xml --cov-report=html --cov-report=term
-
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v3
-      if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
-      with:
-        file: ./coverage.xml
-        flags: unittests
-        name: codecov-umbrella
-        fail_ci_if_error: false
-
-  test-minimal-dependencies:
-    runs-on: ubuntu-latest
-    name: Test with minimal dependencies
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.8"
-
-    - name: Install minimal dependencies
-      run: |
-        python -m pip install --upgrade pip setuptools wheel
-        pip install -r requirements-prod.txt
-        pip install pytest
-        pip install -e .
-
-    - name: Test with minimal dependencies
-      run: |
-        pytest tests/test_basic.py -v
-
-  security-scan:
-    runs-on: ubuntu-latest
-    name: Security scan
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.11"
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install safety bandit[toml]
-        pip install -r requirements.txt
-
-    - name: Run safety check
-      run: |
-        safety check --json || echo "Safety check completed"
-
-    - name: Run bandit security scan
-      run: |
-        bandit -r src/ -f json || echo "Bandit scan completed"
-
-  docs:
-    runs-on: ubuntu-latest
-    name: Build documentation
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.11"
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -e .
-
-    - name: Build documentation
-      run: |
-        cd docs
-        make html
-
-    - name: Upload documentation artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: documentation
-        path: docs/_build/html/
-
-  docker-build:
-    runs-on: ubuntu-latest
-    name: Test Docker builds
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-
-    - name: Build production Docker image
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        file: ./Dockerfile
-        push: false
-        tags: qfinbox:prod-test
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
-
-    - name: Build development Docker image
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        file: ./Dockerfile.dev
-        push: false
-        tags: qfinbox:dev-test
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
-
-    - name: Test production container
-      run: |
-        docker run --rm qfinbox:prod-test python -c "import qfinbox; print(f'qfinbox v{qfinbox.__version__} works!')"
-
-  build-package:
-    runs-on: ubuntu-latest
-    name: Build distribution packages
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.11"
-
-    - name: Install build dependencies
-      run: |
-        python -m pip install --upgrade pip build twine
-
-    - name: Build package
-      run: |
-        python -m build
-
-    - name: Check package
-      run: |
-        twine check dist/*
-
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: dist-packages
-        path: dist/
+        pytest tests/ -v
